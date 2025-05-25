@@ -11,7 +11,7 @@ import { desc, eq } from "drizzle-orm"; // Drizzle operators
  */
 export async function getPrompts() {
   try {
-    await devDelay(); // Simulate latency in development
+    await devDelay(3000); // Simulate latency in development
     console.log("Server Action: Fetching prompts...");
     const allPrompts = await db.select().from(prompts).orderBy(desc(prompts.createdAt));
     console.log(`Server Action: Fetched ${allPrompts.length} prompts.`);
