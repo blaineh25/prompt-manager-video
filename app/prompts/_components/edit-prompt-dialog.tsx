@@ -44,10 +44,7 @@ export const EditPromptDialog = ({ open, onOpenChange, onPromptUpdated, prompt }
     
     try {
       console.log("Submitting update with data:", { id: prompt.id, ...formData });
-      const updatedPrompt = await updatePrompt({
-        id: prompt.id,
-        ...formData
-      });
+      const updatedPrompt = await updatePrompt(prompt.id, formData);
       console.log("Update successful:", updatedPrompt);
       onPromptUpdated();
       onOpenChange(false);
