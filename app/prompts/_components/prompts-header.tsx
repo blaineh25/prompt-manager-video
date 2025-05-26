@@ -7,10 +7,9 @@ import { CreatePromptDialog } from "./create-prompt-dialog";
 
 export const PromptsHeader = () => {
   const [isCreateDialogOpen, setIsCreateDialogOpen] = useState(false);
-  const [refreshKey, setRefreshKey] = useState(0);
 
   const handlePromptCreated = () => {
-    setRefreshKey(prev => prev + 1);
+    window.location.reload();
   };
 
   return (
